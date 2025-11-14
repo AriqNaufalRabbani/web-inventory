@@ -8,7 +8,7 @@ export default function SimpleChart({
   const maxValue = Math.max(...data.map((d) => Math.max(d.in, d.out)));
 
   return (
-    <div className="rounded-xl border border-gray-200 p-5 bg-white shadow-sm">
+    <div className="rounded-xl border border-gray-200 p-5 bg-white shadow-sm dark:bg-gray-dark">
       <h2 className="font-semibold mb-4">Barang Masuk vs Keluar (7 Hari)</h2>
 
       <div className="grid grid-cols-7 gap-4 h-40 items-end">

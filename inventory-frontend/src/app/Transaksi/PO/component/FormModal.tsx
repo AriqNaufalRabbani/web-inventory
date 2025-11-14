@@ -118,7 +118,7 @@ export default function FormModal({
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className="bg-white p-6 rounded-2xl shadow-lg w-full"
+            className="bg-white p-6 rounded-2xl shadow-lg w-full dark:bg-gray-dark"
             style={{ maxWidth: "50rem" }}
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}

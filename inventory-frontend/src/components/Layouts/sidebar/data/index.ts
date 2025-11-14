@@ -44,10 +44,10 @@ export const NAV_DATA: NavSection[] = [
       { title: "Approvals", url: "/Approvals", icon: Icons.Table, roles: [1,2,3], items: [] },
       {
         title: "Reports", url: "/", icon: Icons.Table, roles: [1,2], items: [
-          { title: "Laporan Stok", url: "/Transaksi/PO" },
-          { title: "Laporan Stock Card", url: "/Transaksi/GR" },
-          { title: "Laporan Top 5 Produk Terjual", url: "/Transaksi/SO" },
-          { title: "Laporan Aging Stock", url: "/Transaksi/Delivery" },
+          { title: "Laporan Stock", url: "/Report/Stock" },
+          { title: "Laporan Stock Card", url: "/Report/StockCard" },
+          { title: "Laporan Top 5 Produk Terjual", url: "/Report/TopProduk" },
+          { title: "Laporan Aging Stock", url: "/Report/AgingStock" },
         ]
       }
     ]

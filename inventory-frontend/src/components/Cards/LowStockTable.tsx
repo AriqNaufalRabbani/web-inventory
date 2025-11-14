@@ -8,7 +8,7 @@ export default function LowStockTable({
   items: { name: string; stock: number; min: number }[];
 }) {
   return (
-    <div className="rounded-xl border border-gray-200 p-5 bg-white shadow-sm">
+    <div className="rounded-xl border border-gray-200 p-5 bg-white shadow-sm dark:bg-gray-dark">
       <h2 className="font-semibold mb-4">Stok Hampir Habis</h2>
 
       <table className="w-full text-sm">

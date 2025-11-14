@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
-  content: ["./src/**/*.{js,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: ["class"],
   theme: {
   	extend: {
@@ -335,9 +335,6 @@ const config: Config = {
   			'4/3': '4 / 3',
   			'21/9': '21 / 9'
   		},
-  		// backgroundImage: {
-  		// 	video: 'url('../images/video/video.png')'
-  		// },
   		content: {
   			'icon-copy': 'url("../images/icon/icon-copy-alt.svg")'
   		},

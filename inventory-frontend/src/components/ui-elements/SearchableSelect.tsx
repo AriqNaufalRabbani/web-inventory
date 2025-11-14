@@ -167,7 +167,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
       <button
         type="button"
         onClick={handleButtonClick}
-        className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-left focus:ring-2 focus:ring-blue-500 flex justify-between items-center"
+        className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-left focus:ring-2 focus:ring-blue-500 flex justify-between items-center border-stroke bg-transparent outline-none transition focus:border-primary disabled:cursor-default disabled:bg-gray-2 data-[active=true]:border-primary dark:border-dark-3 dark:bg-dark-2 dark:focus:border-primary dark:disabled:bg-dark dark:data-[active=true]:border-primary"
       >
         {loading ? (
           <span className="text-gray-500">Loading...</span>
@@ -194,7 +194,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
       </button>
 
       {open && (
-        <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded shadow-lg">
+        <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded shadow-lg border-stroke bg-transparent outline-none transition focus:border-primary disabled:cursor-default disabled:bg-gray-2 data-[active=true]:border-primary dark:border-dark-3 dark:bg-dark-2 dark:focus:border-primary dark:disabled:bg-dark dark:data-[active=true]:border-primary">
           <input
             type="text"
             value={search}

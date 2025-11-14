@@ -29,7 +29,7 @@ export default function StatsCards({ data }: { data: Stat[] }) {
         <motion.div
           variants={cardVariant}
           key={index}
-          className="rounded-xl border border-gray-200 p-5 bg-white shadow-sm"
+          className="rounded-xl border border-gray-200 p-5 bg-white shadow-sm dark:bg-gray-dark"
         >
           <p className="text-gray-600 text-sm">{item.title}</p>
           <p className="text-3xl font-semibold mt-1">{item.value}</p>

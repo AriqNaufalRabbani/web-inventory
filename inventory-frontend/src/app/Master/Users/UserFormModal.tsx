@@ -64,7 +64,7 @@ export default function UserFormModal({
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md"
+            className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md dark:bg-gray-dark"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
@@ -102,11 +102,12 @@ export default function UserFormModal({
               )}
 
               <div>
-                <label className="block text-sm font-medium">Fullname</label>
+                <label className="block text-sm font-medium">Full Name</label>
                 <input
                   name="fullname"
                   value={formData.fullname}
                   onChange={handleChange}
+                  placeholder="Full Name"
                   className="w-full border p-2 rounded"
                   required
                 />

@@ -22,7 +22,7 @@ export default function ProfessionalChart({ data }: { data: DataItem[] }) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="rounded-xl border border-gray-200 p-5 bg-white shadow-sm"
+      className="rounded-xl border border-gray-200 p-5 bg-white shadow-sm dark:bg-gray-dark"
     >
       <h2 className="font-semibold mb-4">Barang Masuk vs Keluar (7 Hari)</h2>
 
