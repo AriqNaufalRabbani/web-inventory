@@ -1,0 +1,113 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+
+export default function SupplierFormModal({
+  open,
+  onClose,
+  onSubmit,
+  editingSupplier,
+}: {
+  open: boolean;
+  onClose: () => void;
+  onSubmit: (formData: any) => void;
+  editingSupplier: any | null;
+}) {
+  const [formData, setFormData] = useState({
+    NmSupplier: "",
+    Contact: "",
+    Address: "",
+  });
+
+  useEffect(() => {
+    if (editingSupplier) {
+      setFormData({
+        NmSupplier: editingSupplier.NmSupplier,
+        Contact: editingSupplier.Contact,
+        Address: editingSupplier.Address,
+      });
+    } else {
+      setFormData({
+        NmSupplier: "",
+        Contact: "",
+        Address: "",
+      });
+    }
+  }, [editingSupplier]);
+
+  if (!open) return null;
+
+  const handleChange = (e: any) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    onSubmit(formData);
+  };
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="fixed inset-0 bg-black/40 flex justify-center items-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md dark:bg-gray-dark"
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.9 }}
+          >
+            <h2 className="text-xl font-semibold mb-4">
+              {editingSupplier ? "Edit Supplier" : "Add Supplier"}
+            </h2>
+
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div>
+                <label className="block text-sm font-medium">Supplier Name</label>
+                <input
+                  name="NmSupplier"
+                  value={formData.NmSupplier}
+                  placeholder="Supplier Name"
+                  onChange={handleChange}
+                  className="w-full border p-2 rounded"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium">Contact</label>
+                <input
+                  name="Contact"
+                  placeholder="Contact"
+                  value={formData.Contact}
+                  onChange={handleChange}
+                  className="w-full border p-2 rounded"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium">Address</label>
+                <textarea name="Address" className="w-full border p-2 rounded" 
+                  placeholder="Address" onChange={handleChange} value={formData.Address || ""}>
+                </textarea>
+              </div>
+
+              <div className="flex justify-end space-x-2 pt-4">
+                <Button variant="outline" type="button" onClick={onClose}>
+                  Cancel
+                </Button>
+                <Button type="submit">{editingSupplier ? "Update" : "Submit"}</Button>
+              </div>
+            </form>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
